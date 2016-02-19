@@ -53,4 +53,6 @@ group :development do
 end
 
 gem 'figaro'
-
+gem 'bootstrap-sass'
+gem 'rspec-rails'
+gem 'capybara'
