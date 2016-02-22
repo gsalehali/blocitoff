@@ -10,8 +10,26 @@
 <body>
   <div class="container">
     <ul class="nav nav-tabs">
-      <li><a href="#">Blocitoff</a></li>
+      <li><%= link_to "Blocitoff",root_path %></li>
     </ul>
+
+    <% if flash[:notice] %>
+      <div class="alert alert-success">
+        <button type="button" class="close" data-dismiss="alert"></button>
+        <%= flash[:notice] %>
+      </div>
+    <% elsif flash[:error] %>
+      <div class="alert alert-danger">
+        <button type="button" class="close" data-dismiss="alert"></button>
+        <%= flash[:error] %>
+      </div>
+    <% elsif flash[:alert] %>
+      <div class="alert alert-warning">
+        <button type="button" class="close" data-dismiss="alert"></button>
+        <%= flash[:alert] %>
+      </div>
+    <% end %>
+
     <%= yield %>
   </div>
 </body>
