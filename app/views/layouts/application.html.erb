@@ -11,6 +11,20 @@
   <div class="container">
     <ul class="nav nav-tabs">
       <li><%= link_to "Blocitoff",root_path %></li>
+      <div class="pull-right user-info">
+        <% if current_user %>
+          Hello <%= current_user.name || current_user.email %>! 
+          <%= link_to edit_user_registration_path, class: "btn btn-primary btn-sm" do%>
+            <span class="glyphicon glyphicon-user"></span>
+          <% end %>
+          <%= link_to destroy_user_session_path, method: :delete, class: "btn btn-primary btn-sm" do %>
+            <span class="glyphicon glyphicon-log-out"></span>
+          <% end %>
+        <% else %>
+          <%= link_to "Sign in", new_user_session_path%> or
+          <%= link_to "Sgin up", new_user_registration_path%>
+        <% end %>
+      </div>
     </ul>
 
     <% if flash[:notice] %>
