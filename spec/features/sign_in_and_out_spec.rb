@@ -10,6 +10,11 @@ describe "Sign in flow" do
       visit_root_and_sign_in
       expect(page.has_content?("Signed in successfully")).to be_truthy
     end
+
+    it "redirect to user's profile" do
+      visit_root_and_sign_in
+      expect(current_path).to eq(user_path(@user))
+    end
   end
 
   context "invalid input" do

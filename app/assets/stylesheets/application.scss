@@ -17,10 +17,21 @@
  @import "bootstrap";
  
 
-.nav{
+.nav, .avatar-pic{
   margin-top: 5px;
  }
 
 .user-info {
    margin-top: 9px;
  }
+
+.user-info-heading {
+  margin: 5px;
+  margin-bottom: 0px;
+  padding: 0px;
+}
+
+.user-info-email {
+  padding: 0px;
+  margin: 0px;
+}
