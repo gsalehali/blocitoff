@@ -18,7 +18,7 @@
  
 
 .nav, .avatar-pic{
-  margin-top: 5px;
+  margin: 5px 0px;
  }
 
 .user-info {
@@ -26,12 +26,28 @@
  }
 
 .user-info-heading {
-  margin: 5px;
-  margin-bottom: 0px;
+  margin: 0px 0px;
   padding: 0px;
 }
 
+.user-info-heading h4 {
+  margin: 6px 0px 0px 0px;
+}
 .user-info-email {
   padding: 0px;
   margin: 0px;
+}
+.border{
+  border: solid 1px;
+}
+
+.btn-circle {
+  width: 24px;
+  height: 24px;
+  padding: 4px 0px;
+  padding-left: 2px;
+  text-align: center;
+  font-size: 12px;
+  line-height: 1.29;
+  border-radius: 15px;
 }

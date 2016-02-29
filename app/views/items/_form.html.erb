@@ -1,0 +1,9 @@
+<h4>Add a new Item</h4>
+<%= form_for [@user, @user.items.new], :html=>{:class=>"form-inline"} do |f|%>
+  <div class="form-group">
+    <%= f.text_field :name, class: "fotm-control", placeholder: "Enter new items" %>  
+    <%= button_tag(type: "submit", class: "btn btn-circle btn-success", name: "commit", value: "conceal") do %>
+      <i class="glyphicon glyphicon-plus"></i>
+    <% end %> 
+  </div>
+<% end %>
