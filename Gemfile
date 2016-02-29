@@ -52,11 +52,22 @@ group :development do
   gem 'spring'
 end
 
-gem 'figaro'
-gem 'bootstrap-sass'
+gem 'figaro' #Heroku Secret Management Gem
+gem 'bootstrap-sass' #Front End Design Framework
+
 group :development, :test do
-  gem 'rspec-rails'
-  gem 'capybara'
-  gem 'factory_girl_rails'
+  gem 'rspec-rails' #RSpec spec tests for Rails  
+  gem 'capybara' #Browser Simulator for Automated Integration Testing
+  gem 'factory_girl_rails' #Factory Girl Test Data generation factories for Rails 
 end
-gem 'devise'
+
+group :development do
+  gem 'pry-rails' #Better REPL than irb, color output more commands, also allows binding in your code for debugging
+  gem 'better_errors' #Better Error display in browser, More detailed error information opens a REPL where the app crashed
+  gem 'binding_of_caller' #Better error information tracing for better errors.
+end
+
+gem 'devise' #User Authentication Gem
+gem 'pundit' #Authorizations for Users 
+gem 'faker'  #Fake Data Generator
+
