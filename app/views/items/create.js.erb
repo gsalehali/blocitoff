@@ -1,0 +1,12 @@
+<% if @item.valid? %>
+  flashMsg("<%= flash[:notice] %>", "success")
+  <% flash.discard %>
+  $("#items-table").append("<%= escape_javascript(render(@item)) %>")
+  highlightElement('#item-' +<%= @item.id %>, "success")
+  $("#new-item").html("<%= escape_javascript(render( partial: 'items/form', locals: { user: @user, item: @new_item })) %>");
+<% else %>
+  flashMsg("<%= flash[:error] %>", "danger")
+  <% flash.discard %>
+  $("#new-item").html("<%= escape_javascript(render(partial: 'items/form', locals: { user: @user, item: @item })) %>");
+  highlightElement("#new_item", "danger");
+<% end %>

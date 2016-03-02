@@ -30,19 +30,21 @@
 
     <% if flash[:notice] %>
       <div class="alert alert-success">
-        <button type="button" class="close" data-dismiss="alert"></button>
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
         <%= flash[:notice] %>
       </div>
     <% elsif flash[:error] %>
       <div class="alert alert-danger">
-        <button type="button" class="close" data-dismiss="alert"></button>
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
         <%= flash[:error].html_safe %>
       </div>
     <% elsif flash[:alert] %>
       <div class="alert alert-warning">
-        <button type="button" class="close" data-dismiss="alert"></button>
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
         <%= flash[:alert] %>
       </div>
+    <% else %>
+      <div id="alert" style="display: none;"></div>
     <% end %>
 
     <%= yield %>
