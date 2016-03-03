@@ -1,0 +1,8 @@
+<% if @item.destroyed? %>
+  flashMsg("<%= flash[:notice] %>", "success")
+  <% flash.discard %>
+  $('#item-' +<%= @item.id %>).fadeOut(1000);
+<% else %>
+  flashMsg("<%= flash[:error] %>", "danger")
+  highlightElement("#new_item", "danger")
+<% end %>
