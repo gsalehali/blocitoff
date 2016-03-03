@@ -1,15 +1,18 @@
 <div class="row user-info">
-  <div class="col-md-4 pull-left avatar-pic">
+<<<<<<< HEAD
+  <div class="col-md-1 pull-left avatar-pic">
     <%= image_tag(@user.avatar.profile.url) if @user.avatar? %>
+=======
+  <div class="col-md-4 pull-left avatar-pic">
+    <%# image_tag(@user.avatar.profile.url) if @user.avatar? %>
+>>>>>>> creating-user-profile
   </div>
-  <div class="col-md-8">
-    <h3 class="user-info-heading"><%= @user.name %></h3>  
+  <div class="col-md-8 user-info-heading">
+    <h4><%= @user.name %></h4>  
   </div>
-  <div class="col-md-8 user-info-email">
-    <small>
-      <%= @user.email %>
-    </small>
-  </div>
+  <div class="col-md-8 user-info-email">      
+    <%= @user.email %>
+  </div> 
 </div>
 <hr>
 
