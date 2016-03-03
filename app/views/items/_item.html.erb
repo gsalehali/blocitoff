@@ -1,4 +1,12 @@
 <tr id="item-<%=item.id%>">
-  <td><%= item.name %></td>
-  <td><%= link_to "", [item.user, item], method: :delete, remote: true, class: 'glyphicon glyphicon-ok' %></td>
+  <td>
+  <%= item.name %>
+  <small>
+    <p class="text-muted"><%= pluralize( item.days_left, "day" ) %> left. </p>
+  </small>
+  </td>
+  <td>
+    <div class="pull-right"><%= link_to "", [item.user, item], method: :delete, remote: true, class: 'glyphicon glyphicon-ok' %>
+    </div>
+  </td>
 </tr>

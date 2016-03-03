@@ -30,7 +30,11 @@
   padding: 0px;
 }
 
-.user-info-heading h4 {
+.table-border {
+    border: 2px solid #DDD;
+}
+
+.user-info-heading h4, .text-muted{
   margin: 6px 0px 0px 0px;
 }
 .user-info-email {
