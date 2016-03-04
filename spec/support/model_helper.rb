@@ -10,7 +10,7 @@ RSpec.shared_examples_for 'it has attributes' do |model, attributes_hash|
         expect(@hash_of_attributes.keys).to include(attribute)
       end
       it "#{attribute} is of the type #{type}" do
-        expect(@hash_of_attributes.values).to include(type)
+        expect(@hash_of_attributes[attribute]).to eq(type)
       end
     end
   end
