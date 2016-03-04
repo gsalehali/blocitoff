@@ -28,7 +28,7 @@ users = User.all
   Item.create!(
     user:   users.sample,
     name:   Faker::Hacker.say_something_smart,
-    created_at: Time.now - rand(7 * 24 * 60).minutes
+    created_at: Time.now - rand(14 * 24 * 60).minutes
   )
 end
 
