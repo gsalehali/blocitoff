@@ -33,8 +33,8 @@ describe Item do
 
   context "methods" do
     describe "#days_left" do
-      it "return correct day(s) left before deleting the task" do
-        @item.created_at = DateTime.now().to_date
+      it "return correct day(s) left before task is deleted" do
+        @item.created_at = DateTime.current
         expect(@item.created_at.to_date).to eq(DateTime.now().to_date)
         expect(@item.days_left).to eq(7)
       end
