@@ -2,7 +2,7 @@ require 'faker'
 
 #create Users
 
-50.times do
+5.times do
   user = User.new(
     name:     Faker::Name.name,
     email:    Faker::Internet.email,
@@ -12,20 +12,23 @@ require 'faker'
   user.save!
 end
 
-admin = User.new(
-  name:       'Admin User', 
-  email:      'admin@example.com',
-  password:   'helloworld',
-)
-admin.skip_confirmation!
-admin.save!
+unless User.find_by(email: 'admin@example.com')
+  admin = User.new(
+    name:       'Admin User', 
+    email:      'admin@example.com',
+    password:   'helloworld',
+  )
+  admin.skip_confirmation!
+  admin.save!
+end 
 
 users = User.all
 
 500.times do
   Item.create!(
     user:   users.sample,
-    name:   Faker::Lorem.sentence
+    name:   Faker::Hacker.say_something_smart,
+    created_at: Time.now - rand(14 * 24 * 60).minutes
   )
 end
 
